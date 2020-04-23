@@ -1,69 +1,61 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ScrollView,
+  FlatList
+} from 'react-native';
+import GoalItem from "./components/GoalItem"
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState('');
-  const [goals, setGoals] = useState([])
+  const [courseGoals, setCourseGoals] = useState([]);
 
-  const enterGoalHandler = (enteredText) => {
+  const goalInputHandler = enteredText => {
     setEnteredGoal(enteredText);
   };
 
   const addGoalHandler = () => {
-    setGoals((currentGoals) => [...currentGoals, enteredGoal]);
+    setCourseGoals(currentGoals =>
+      currentGoals.concat({ id: Math.random().toString(), value: enteredGoal })
+    );
   };
 
   return (
     <View style={styles.screen}>
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder="Course goal"
-          style={styles.textInput}
-          onChangeText={enterGoalHandler}
+          placeholder="Course Goal"
+          style={styles.input}
+          onChangeText={goalInputHandler}
           value={enteredGoal}
         />
-        <Button title="Add"
-          onPress={addGoalHandler}
-        />
+        <Button title="ADD" onPress={addGoalHandler} />
       </View>
-      <FlatList style={styles.goalList}
-        data={goals}
-        renderItem={itemData => {
-          <View style={styles.listItem}>
-            <Text>{itemData.item}</Text>
-          </View>
-        }}
+      <FlatList
+        keyExtractor={(item, index) => item.id}
+        data={courseGoals}
+        renderItem={itemData => <GoalItem>{itemData.item.value}</GoalItem>}
       />
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   screen: {
     padding: 50
   },
-
   inputContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
   },
-
-  textInput: {
+  input: {
     width: '80%',
-    borderBottomColor: 'black',
-    borderBottomWidth: 1
-  },
-
-  goalList: {
-
-  },
-
-  listItem: {
-    padding: 2.5,
-    marginVertical: 5,
-    backgroundColor: '#ccc',
     borderColor: 'black',
-    borderWidth: 0.5
+    borderWidth: 1,
+    padding: 10
   }
 });
