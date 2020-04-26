@@ -19,7 +19,7 @@ const GoalInputs = props => {
     <Modal visible={props.visible} animationType="fade">
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder="Course Goal"
+          placeholder="Goal"
           style={styles.input}
           onChangeText={goalInputHandler}
           value={enteredGoal}

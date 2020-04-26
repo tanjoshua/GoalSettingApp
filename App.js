@@ -6,8 +6,9 @@ import {
   Button,
   FlatList
 } from 'react-native';
-import GoalItem from "./components/GoalItem"
-import GoalInputs from "./components/GoalInputs"
+import { Ionicons } from '@expo/vector-icons';
+import GoalItem from "./components/GoalItem";
+import GoalInputs from "./components/GoalInputs";
 
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
@@ -34,7 +35,7 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <Button title="Add New Goal" onPress={addModalHandler} />
+      <Ionicons style={styles.icon} name='ios-add-circle-outline' size={32} onPress={addModalHandler} />
       <GoalInputs visible={addModal} onAdd={addGoalHandler} onCancel={cancelGoalHandler} />
       <FlatList
         keyExtractor={(item, index) => item.id}
@@ -48,5 +49,8 @@ export default function App() {
 const styles = StyleSheet.create({
   screen: {
     padding: 50
+  },
+  icon: {
+    alignSelf: 'center'
   }
 });
