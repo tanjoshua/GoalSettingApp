@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     padding: 50
   },
   icon: {
-    alignSelf: 'center'
+    alignSelf: 'center',
+    padding: 20
   }
 });

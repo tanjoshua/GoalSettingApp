@@ -26,10 +26,10 @@ const GoalInputs = props => {
         />
         <View style={styles.buttons}>
           <View style={styles.singleButton}>
-            <Button title="ADD" onPress={addGoalHandler} />
+            <Button title="ADD" color="#808080" onPress={addGoalHandler} />
           </View>
           <View style={styles.singleButton}>
-            <Button title="CANCEL" color='red' onPress={cancelGoalHandler} />
+            <Button title="CANCEL" color='#ff3333' onPress={cancelGoalHandler} />
           </View>
         </View>
       </View>
@@ -51,14 +51,17 @@ const styles = StyleSheet.create(
       borderColor: 'black',
       borderWidth: 1,
       padding: 10,
-      marginBottom: 15
+      marginBottom: 15,
+      borderRadius: 10,
+      borderColor: '#ccc'
     },
     buttons: {
       width: '50%',
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
+      borderRadius: 10
     },
     singleButton: {
-      width: '40%'
+      width: '40%',
     }
   })
