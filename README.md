@@ -2,4 +2,4 @@
 To do list mobile application created using React Native. 
 Mini project to familiarize myself with React Hooks and creating components.
 
-Work in progress
+Add goal. Complete goal. Tap to delete.
