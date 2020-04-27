@@ -7,4 +7,4 @@ Add goal. Complete goal. Tap to delete.
 Published at https://exp.host/@tanjoshua/goalsetting
 
 # Screenshots
-![ss1](https://ibb.co/0BwBY2H)
+![ss1](https://i.ibb.co/s5B5sR8/Whats-App-Image-2020-04-26-at-17-18-20.jpg)
